@@ -1,5 +1,7 @@
 * {
 	transition: all .2s;
+	-webkit-transition: all .2s;
+	-moz-transition: all .2s;
 }
 
 body {
@@ -40,7 +42,7 @@ button {
 	color: #4094c9;
 	letter-spacing: 1px;
 	padding-top: 5px;
-	/*transition: all .2s;*/
+	outline: none;
 }
 
 button:hover {
@@ -61,7 +63,7 @@ button:hover {
 
 #container {
 	max-width: 600px;
-	margin: 0 auto;
+	margin: 20px auto;
 }
 
 .square {
@@ -70,4 +72,5 @@ button:hover {
 	padding-bottom: 30%;
 	float: left;
 	margin: 1.66%;
+	border-radius: 10%;
 }

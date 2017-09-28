@@ -6,43 +6,19 @@ var colorDisplay = document.querySelector("#colorDisplay");
 var messageDisplay = document.querySelector("#message");
 var h1 = document.querySelector("h1");
 var resetButton = document.querySelector("#reset");
-var easyButton = document.querySelector("#easy");
-var hardButton = document.querySelector("#hard");
+var modeButtons = document.querySelectorAll(".mode");
 
+for (var i = 0; i < modeButtons.length; i++) {
+	modeButtons[i].addEventListener("click", function() {
+		modeButtons[0].classList.remove("selected");
+		modeButtons[1].classList.remove("selected");
+		this.classList.add("selected");
+		this.textContent === "Easy" ? numOfSquares = 3: numOfSquares = 6;
+		reset();
+	});
+}
 
-
-easyButton.addEventListener("click", function() {
-	easyButton.classList.add("selected");
-	hardButton.classList.remove("selected");
-	numOfSquares = 3;
-	colors = generateRandomColors(numOfSquares);
-	pickedColor = pickColor();
-	colorDisplay.textContent = pickedColor;
-	for (var i = 0; i < squares.length; i++) {
-		if (colors[i]) {
-			squares[i].style.backgroundColor = colors[i];
-		} else {
-			squares[i].style.display = "none";
-		}
-	}
-	h1.style.backgroundColor = "#4094c9";
-});
-
-hardButton.addEventListener("click", function() {
-	hardButton.classList.add("selected");
-	easyButton.classList.remove("selected");
-	numOfSquares = 6;
-	colors = generateRandomColors(numOfSquares);
-	pickedColor = pickColor();
-	colorDisplay.textContent = pickedColor;
-	for (var i = 0; i < squares.length; i++) {
-		squares[i].style.backgroundColor = colors[i];
-		squares[i].style.display = "block";
-	}
-	h1.style.backgroundColor = "#4094c9";
-});
-
-resetButton.addEventListener("click", function() {
+function reset() {
 	//generate all new colors
 	colors = generateRandomColors(numOfSquares);
 	//pick a new random color from array
@@ -51,11 +27,23 @@ resetButton.addEventListener("click", function() {
 	colorDisplay.textContent = pickedColor;
 	//change colors of squares
 	for (var i = 0; i < squares.length; i++) {
-		squares[i].style.backgroundColor = colors[i];
+		// check if color is not null
+		if(colors[i]) {
+			// show color
+			squares[i].style.display = "block";
+			squares[i].style.backgroundColor = colors[i];
+		} else {
+			// hide color
+			squares[i].style.display = "none";
+		}
 	};
 	h1.style.backgroundColor = "#4094c9";
 	resetButton.textContent = "New colors";
-	messageDisplay.style.color = "";
+	messageDisplay.textContent = "";
+}
+
+resetButton.addEventListener("click", function() {
+	reset();
 });
 
 colorDisplay.textContent = pickedColor;
