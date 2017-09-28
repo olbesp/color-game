@@ -3,6 +3,7 @@ var squares = document.querySelectorAll(".square");
 var pickedColor = pickColor();
 var colorDisplay = document.querySelector("#colorDisplay");
 var messageDisplay = document.querySelector("#message");
+var h1 = document.querySelector("h1");
 
 colorDisplay.textContent = pickedColor;
 
@@ -31,6 +32,7 @@ function changeColors(color) {
 	for (var i = 0; i < squares.length; i++) {
 		//change each color to match given color
 		squares[i].style.backgroundColor = color;
+		h1.style.backgroundColor = color;
 	}
 };
 
@@ -49,7 +51,7 @@ function generateRandomColors(num) {
 	}
 	//return array
 	return arr;
-}
+};
 
 function randomColor() {
 	//pick a "red" from 0 - 255
@@ -60,4 +62,4 @@ function randomColor() {
 	var blue = Math.floor(Math.random() * 256);
 	//Make "rgb(r, g, b)"
 	return "rgb(" + red + ", " + green + ", " + blue + ")";
-}
+};
