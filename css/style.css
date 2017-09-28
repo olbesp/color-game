@@ -1,8 +1,12 @@
+* {
+	transition: all .2s;
+}
+
 body {
 	background-color: #232323;
 	margin: 0;
 	font-family: 'Luckiest Guy', cursive;
-
+	
 
 }
 
@@ -12,11 +16,13 @@ h1 {
 	background: #4094c9;
 	margin: 0;
 	padding-top: 15px;
-
+	font-size: 170%;
+	letter-spacing: 2px;
 }
 
 #colorDisplay {
-	font-size: 120%;
+	font-size: 150%;
+	letter-spacing: 3px;
 }
 
 #stripe {
@@ -27,10 +33,29 @@ h1 {
 
 button {
 	font-family: 'Luckiest Guy', cursive;
+	font-size: inherit;
+	border: none;
+	background: none;
+	height: 100%;
+	color: #4094c9;
+	letter-spacing: 1px;
+	padding-top: 5px;
+	/*transition: all .2s;*/
+}
+
+button:hover {
+	background: #4094c9;
+	color: white;
+}
+
+#message {
+	display: inline-block;
+	width: 20%;
 }
 
 .selected {
-	background: blue;
+	background: #4094c9;
+	color: white;
 }
 
 
