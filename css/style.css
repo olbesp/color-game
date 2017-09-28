@@ -12,6 +12,11 @@ h1 {
 	text-align: center;
 }
 
+.selected {
+	background: blue;
+}
+
+
 #container {
 	max-width: 600px;
 	margin: 0 auto;
