@@ -8,8 +8,6 @@ body {
 	background-color: #232323;
 	margin: 0;
 	font-family: 'Luckiest Guy', cursive;
-	
-
 }
 
 h1 {
@@ -18,7 +16,7 @@ h1 {
 	background: #4094c9;
 	margin: 0;
 	padding-top: 15px;
-	font-size: 170%;
+	font-size: 130%;
 	letter-spacing: 2px;
 }
 
@@ -31,6 +29,7 @@ h1 {
 	background-color: white;
 	height: 30px;
 	text-align: center;
+	font-size: 70%;
 }
 
 button {
@@ -60,7 +59,6 @@ button:hover {
 	color: white;
 }
 
-
 #container {
 	max-width: 600px;
 	margin: 20px auto;
@@ -73,4 +71,14 @@ button:hover {
 	float: left;
 	margin: 1.66%;
 	border-radius: 10%;
+}
+
+@media only screen and (min-width: 600px) {
+	#stripe {
+		font-size: 100%;
+	}
+
+	h1 {
+		font-size: 170%;
+	}
 }
